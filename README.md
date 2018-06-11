@@ -12,6 +12,8 @@ docker_ubuntu16 -> docker_java8 -> docker_android -> docker_fastlane
 
 Jenkins pipeline basic:
 
+
+
 pipeline {
     agent { label 'docker'}
     stages {
@@ -20,11 +22,9 @@ pipeline {
                 sh "docker pull identificator/fastlane:latest"
             }
         }
-
         stage('Checkout project from git SCM') {
             steps {
                 checkout([$class: 'GitSCM', branches: [[name: '*/dev']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'SubmoduleOption', disableSubmodules: false, parentCredentials: false, recursiveSubmodules: true, reference: '', trackingSubmodules: false]], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'somethinghere', url: 'git@gitserver:projectrepo/projectname.git']]])
-
             }
         }
         stage('Docker Run') {
