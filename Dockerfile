@@ -10,6 +10,7 @@ RUN apt-get update \
     && gem install bundler \
     && gem install curb \
     && gem install fastlane-plugin-badge \
+    && mkdir tmp \
     && cd /opt \
     && mkdir app \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
