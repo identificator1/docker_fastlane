@@ -12,8 +12,7 @@ docker_ubuntu16 -> docker_java8 -> docker_android -> docker_fastlane
 
 Jenkins pipeline basic:
 
-
-
+```
 pipeline {
     agent { label 'docker'}
     stages {
@@ -34,3 +33,4 @@ pipeline {
         }
     }
 }
+```
