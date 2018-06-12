@@ -12,6 +12,8 @@ RUN apt-get update \
     && gem install fastlane-plugin-badge \
     && mkdir tmp \
     && cd /opt \
-    && mkdir app \
+    && mkdir app
+COPY gradle-wrapper.properties /opt/android/tools/templates/gradle/wrapper/gradle/wrapper/
+RUN /opt/android/tools/templates/gradle/wrapper/gradlew \    
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
     && apt-get autoremove -y && apt-get clean
