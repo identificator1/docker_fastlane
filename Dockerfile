@@ -13,6 +13,5 @@ RUN apt-get update \
     && mkdir tmp \
     && cd /opt \
     && mkdir app \
-    && opt/gradlew clean -p . \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
     && apt-get autoremove -y && apt-get clean
